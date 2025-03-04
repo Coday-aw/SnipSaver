@@ -9,9 +9,21 @@ import Link from "next/link";
 import Button from "../components/Button";
 import { useAuth } from "@clerk/nextjs";
 import { useSnippets } from "@/hooks/useSnippets";
+import { useSnippets as useSnippetsContext } from "@/app/components/SnippetContext";
 
 function DashBoard() {
   const { snippets, loading, setSnippets } = useSnippets();
+  const { searchQuery } = useSnippetsContext();
+
+  const filteredSnippets = snippets.filter(
+    (snippet) =>
+      snippet.title
+        .toLocaleLowerCase()
+        .includes(searchQuery.toLocaleLowerCase()) ||
+      snippet.language
+        .toLocaleLowerCase()
+        .includes(searchQuery.toLocaleLowerCase())
+  );
 
   const handleDeleteSnippet = (id: number) => {
     setSnippets(snippets.filter((snippet) => Number(snippet.id) !== id));
@@ -22,7 +34,7 @@ function DashBoard() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2  gap-2">
       <Toaster />
-      {snippets.length === 0 ? (
+      {filteredSnippets.length === 0 ? (
         <div className="flex justify-center items-center  mt-32">
           <div className="flex flex-col gap-10">
             <p className="text-2xl font-bold">Welcome to Snip Saver</p>
@@ -32,7 +44,7 @@ function DashBoard() {
           </div>
         </div>
       ) : (
-        snippets.map((snippet) => (
+        filteredSnippets.map((snippet) => (
           <SnippetCard
             key={snippet.id}
             onDelete={handleDeleteSnippet}

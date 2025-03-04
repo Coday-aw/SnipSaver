@@ -8,6 +8,7 @@ import { Snippet } from "@/lib/types";
 import CodeEditor from "./CodeEditor";
 import Button from "./Button";
 import { useAuth } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 type SnippetFormData = Omit<Snippet, "id">;
 
@@ -15,6 +16,7 @@ const SnippetForm = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(
     AllLanguages[0].name
   );
+  const router = useRouter();
 
   const { userId } = useAuth();
 
@@ -56,6 +58,7 @@ const SnippetForm = () => {
     } else {
       toast.success("Snippet saved successfully");
       console.log(data);
+      router.push("/dashboard");
     }
 
     setFormData({
