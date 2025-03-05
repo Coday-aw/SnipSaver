@@ -72,25 +72,30 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
   };
 
   return (
-    <div className="flex flex-col h-[500px] border border-slate-200 bg-slate-100  gap-4 shadow-lg rounded-lg p-4 ">
+    <div className="flex flex-col h-[500px] border border-slate-300 dark:border-none   bg-slate-100 dark:bg-slate-800  gap-4 shadow-lg rounded-lg p-4 ">
       <div className="flex justify-between items-center">
-        <p className="font-bold text-xl md:text-2xl">{snippet.title}</p>
+        <p className="font-bold text-xl md:text-2xl dark:text-slate-300">
+          {snippet.title}
+        </p>
         <FaHeart
           onClick={handleLiked}
           size={20}
-          className={`cursor-pointer ${
+          className={`cursor-pointer  ${
             isLiked ? "text-red-500" : "hover:text-red-500"
           } `}
         />
       </div>
       <div className="flex justify-between">
-        <p className=" border p-1 rounded-lg text-white bg-blue-500">
+        <p className=" border p-1 rounded-lg text-white dark:text-slate-300 bg-blue-500">
           {snippet.language}
         </p>
       </div>
 
       <div className="overflow-y-auto">
-        <SyntaxHighlighter language={snippet.language} style={docco}>
+        <SyntaxHighlighter
+          language={snippet.language.toLocaleLowerCase()}
+          style={docco}
+        >
           {snippet.code}
         </SyntaxHighlighter>
       </div>
@@ -98,16 +103,19 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
         <IoCopyOutline
           onClick={handleCopy}
           size={20}
-          className="hover:text-blue-500 cursor-pointer"
+          className="hover:text-blue-500 cursor-pointer dark:text-slate-300"
         />
         <div className="flex gap-2">
           <Link href={`/edit/${snippet.id}`}>
-            <FaEdit size={20} className="hover:text-blue-500 cursor-pointer" />
+            <FaEdit
+              size={20}
+              className="hover:text-blue-500 cursor-pointer dark:text-slate-300"
+            />
           </Link>
           <FaTrashCan
             onClick={handleDelete}
             size={20}
-            className="hover:text-red-500 cursor-pointer"
+            className="hover:text-red-500 cursor-pointer dark:text-slate-300"
           />
         </div>
       </div>

@@ -1,9 +1,9 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { FaLongArrowAltLeft } from "react-icons/fa";
 import { AiFillAppstore } from "react-icons/ai";
 import { IoIosHeart } from "react-icons/io";
 import { IoMdCreate } from "react-icons/io";
 import Link from "next/link";
+import { UserButton } from "@clerk/nextjs";
 
 interface CloseMenuLinksProps {
   onClick: () => void;
@@ -11,13 +11,13 @@ interface CloseMenuLinksProps {
 
 const CloseMenuLinks = ({ onClick }: CloseMenuLinksProps) => {
   return (
-    <div className="flex flex-col  gap-10 border bg-slate-100 border-slate-200 shadow-lg w-14 h-screen p-7 rounded-lg">
+    <div className="flex flex-col  gap-10 border bg-slate-100 border-slate-300 dark:bg-slate-800 dark:border-none shadow-lg w-14 h-screen p-7 rounded-lg">
       <div className="flex flex-col items-center gap-10">
         <button
           onClick={onClick}
           className=" hover:bg-blue-500 p-2 hover:text-white  rounded-lg cursor-pointer"
         >
-          <FaLongArrowAltRight size={25} />
+          <FaLongArrowAltRight size={25} className="dark:text-slate-300" />
         </button>
 
         <div className=" flex flex-col gap-10">
@@ -26,7 +26,7 @@ const CloseMenuLinks = ({ onClick }: CloseMenuLinksProps) => {
               Create
             </span>
             <Link href="/create">
-              <IoMdCreate size={25} />
+              <IoMdCreate size={25} className="dark:text-slate-300" />
             </Link>
           </div>
           <div className=" relative group hover:bg-blue-500 p-2 hover:text-white  rounded-lg cursor-pointer">
@@ -34,7 +34,7 @@ const CloseMenuLinks = ({ onClick }: CloseMenuLinksProps) => {
               Snippets
             </span>
             <Link href="/dashboard">
-              <AiFillAppstore size={25} />
+              <AiFillAppstore size={25} className="dark:text-slate-300" />
             </Link>
           </div>
           <div className=" relative group hover:bg-blue-500 p-2 hover:text-red-500  rounded-lg cursor-pointer">
@@ -42,10 +42,13 @@ const CloseMenuLinks = ({ onClick }: CloseMenuLinksProps) => {
               Favorits
             </span>
             <Link href="/favorits">
-              <IoIosHeart size={25} />
+              <IoIosHeart size={25} className="dark:text-slate-300" />
             </Link>
           </div>
         </div>
+      </div>
+      <div className="mt-auto flex justify-center items-center  ">
+        <UserButton />
       </div>
     </div>
   );

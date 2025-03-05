@@ -74,7 +74,7 @@ const Languages = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="mt-10 text-slate-500">
+    <div className="mt-10 text-slate-500 dark:text-slate-300">
       <p className="font-bold text-xl">Languages</p>
       <ul className="mt-2 space-y-2 p-2">
         {sortedLanguages.map((language) => (

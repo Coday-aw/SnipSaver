@@ -1,7 +1,7 @@
 import { AiFillAppstore } from "react-icons/ai";
 import { IoIosHeart } from "react-icons/io";
 import Link from "next/link";
-import { useActiveLink } from "@/app/components/ActiveLinkContext";
+import { useActiveLink } from "@/app/components/context/ActiveLinkContext";
 
 const Links = () => {
   const { activeLink, setActiveLink } = useActiveLink();
@@ -13,8 +13,8 @@ const Links = () => {
         className={`flex justify-start items-center gap-2 border p-2 rounded-lg font-bold w-full ${
           activeLink === "/dashboard"
             ? "bg-blue-500 text-white border-none"
-            : "border-black"
-        } hover:bg-blue-500 hover:text-white hover:border-none`}
+            : "border-black dark:border-slate-300"
+        } hover:bg-blue-500 hover:text-white dark:text-slate-300  hover:border-none`}
         onClick={() => setActiveLink("/dashboard")}
       >
         <AiFillAppstore />
@@ -25,8 +25,8 @@ const Links = () => {
         className={`group flex justify-start items-center gap-2 border p-2 rounded-lg font-bold w-full ${
           activeLink === "/favorits"
             ? "bg-blue-500 text-white border-none"
-            : "border-black"
-        } hover:bg-blue-500 hover:text-white hover:border-none`}
+            : "border-black dark:border-slate-300"
+        } hover:bg-blue-500 hover:text-white dark:text-slate-300 hover:border-none`}
         onClick={() => setActiveLink("/favorits")}
       >
         <IoIosHeart

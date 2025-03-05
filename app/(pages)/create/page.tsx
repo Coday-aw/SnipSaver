@@ -1,6 +1,6 @@
 "use client";
 
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 import SnippetForm from "../components/SnippetForm";
 

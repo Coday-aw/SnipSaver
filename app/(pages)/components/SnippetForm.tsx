@@ -2,9 +2,8 @@
 import { AllLanguages } from "@/lib/data";
 import React, { useState } from "react";
 import { supabase } from "@/Supabase/supabaseClient";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { Snippet } from "@/lib/types";
-
 import CodeEditor from "./CodeEditor";
 import Button from "./Button";
 import { useAuth } from "@clerk/nextjs";
@@ -78,7 +77,7 @@ const SnippetForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-6 bg-slate-100 p-4 rounded-lg"
+      className="flex flex-col gap-6 bg-slate-100 dark:bg-slate-800 dark:text-slate-300 p-4 rounded-lg"
     >
       <div>
         <label className="font-bold">Title</label>

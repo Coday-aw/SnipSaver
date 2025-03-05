@@ -2,7 +2,7 @@
 import toast, { Toaster } from "react-hot-toast";
 import SnippetCard from "../components/SnippetCard";
 import { useSnippets } from "@/hooks/useSnippets";
-import { useSnippets as useSnippetContext } from "@/app/components/SnippetContext";
+import { useSnippets as useSnippetContext } from "@/app/components/context/SnippetContext";
 
 function page() {
   const { snippets, loading, setSnippets } = useSnippets();

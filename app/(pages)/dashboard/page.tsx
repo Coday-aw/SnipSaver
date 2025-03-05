@@ -1,15 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { supabase } from "@/Supabase/supabaseClient";
-import { Snippet } from "@/lib/types";
 import SnippetCard from "../components/SnippetCard";
 import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
 import Button from "../components/Button";
-import { useAuth } from "@clerk/nextjs";
 import { useSnippets } from "@/hooks/useSnippets";
-import { useSnippets as useSnippetsContext } from "@/app/components/SnippetContext";
+import { useSnippets as useSnippetsContext } from "@/app/components/context/SnippetContext";
 
 function DashBoard() {
   const { snippets, loading, setSnippets } = useSnippets();

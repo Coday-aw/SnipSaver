@@ -8,8 +8,6 @@ import CodeEditor from "../../components/CodeEditor";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 
-// import { useRouter } from "next/router";
-
 function EditPage() {
   const params = useParams();
   const [snippet, setSnippet] = useState<Snippet | null>(null);
@@ -62,7 +60,7 @@ function EditPage() {
       <Toaster />
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-6 bg-slate-100 p-4 rounded-lg"
+        className="flex flex-col gap-6 bg-slate-100  dark:bg-slate-800 dark:text-slate-300 p-4 rounded-lg"
       >
         <p className="text-center font-bold text-2xl">Edit Snippet</p>
         <div>

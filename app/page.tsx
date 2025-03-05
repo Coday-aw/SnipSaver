@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar/Navbar";
 
 function page() {
   return (
-    <div>
-      <Navbar />;
-      <IntroSection />;
+    <div className="mb-20">
+      <Navbar />
+      <IntroSection />
     </div>
   );
 }
