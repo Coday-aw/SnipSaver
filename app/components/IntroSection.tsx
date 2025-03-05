@@ -21,7 +21,13 @@ const IntroSection = () => {
       </button>
 
       <div className="mt-20">
-        <Image src={heroImage} alt="hero image" width={800} height={500} />
+        <Image
+          src={heroImage}
+          alt="hero image"
+          className="rounded-lg"
+          width={800}
+          height={500}
+        />
       </div>
     </div>
   );

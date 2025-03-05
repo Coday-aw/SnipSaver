@@ -77,7 +77,7 @@ const SnippetForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-6 bg-slate-100 dark:bg-slate-800 dark:text-slate-300 p-4 rounded-lg"
+      className="flex flex-col gap-6 border border-slate-200 dark:border-none shadow-lg dark:bg-slate-800 dark:text-slate-300 p-4 rounded-lg"
     >
       <div>
         <label className="font-bold">Title</label>

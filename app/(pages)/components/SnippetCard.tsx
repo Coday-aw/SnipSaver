@@ -72,7 +72,7 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
   };
 
   return (
-    <div className="flex flex-col h-[500px] border border-slate-300 dark:border-none   bg-slate-100 dark:bg-slate-800  gap-4 shadow-lg rounded-lg p-4 ">
+    <div className="flex flex-col h-[500px] border border-slate-300 dark:border-none  dark:bg-slate-800  gap-4 shadow-lg rounded-lg p-4 ">
       <div className="flex justify-between items-center">
         <p className="font-bold text-xl md:text-2xl dark:text-slate-300">
           {snippet.title}

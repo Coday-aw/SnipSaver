@@ -21,7 +21,7 @@ const Sidebar = () => {
       {!isOpen ? (
         <CloseMenuLinks onClick={toggleSidebar} />
       ) : (
-        <div className=" flex flex-col gap-10 border border-slate-300 dark:border-none  bg-slate-100 shadow-lg w-64 h-screen p-7 rounded-lg dark:bg-slate-800">
+        <div className=" flex flex-col gap-10 border border-slate-300 dark:border-none  shadow-lg w-64 h-screen p-7 rounded-lg dark:bg-slate-800">
           <div className="flex justify-center items-center gap-2">
             <Logo />
             <button
@@ -37,7 +37,7 @@ const Sidebar = () => {
           </Button>
           <Links />
           <Languages />
-          <div className="mt-auto flex justify-center items-center dark:bg-slate-700 bg-slate-200 p-2 rounded-lg">
+          <div className="mt-auto flex justify-center items-center dark:bg-slate-500 hover:bg-slate-100 p-2 rounded-lg">
             <UserButton showName />
           </div>
         </div>
