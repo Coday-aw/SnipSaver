@@ -1,11 +1,11 @@
 "use client";
 import toast, { Toaster } from "react-hot-toast";
 import SnippetCard from "../components/SnippetCard";
-import { useSnippets } from "@/hooks/useSnippets";
+import { useLikedSnippets } from "@/hooks/useSnippets";
 import { useSnippets as useSnippetContext } from "@/app/components/context/SnippetContext";
 
 function page() {
-  const { snippets, loading, setSnippets } = useSnippets();
+  const { snippets, loading, setSnippets } = useLikedSnippets();
   const { searchQuery } = useSnippetContext();
 
   const filteredSnippets = snippets.filter(
