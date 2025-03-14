@@ -8,6 +8,8 @@ interface SnippetsContextProps {
   setSnippets: React.Dispatch<React.SetStateAction<Snippet[]>>;
   searchQuery: string;
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+  selectedTag: string;
+  setSelectedTag: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const SnippetsContext = createContext<SnippetsContextProps | undefined>(
@@ -17,10 +19,18 @@ const SnippetsContext = createContext<SnippetsContextProps | undefined>(
 export const SnippetsProvider = ({ children }: { children: ReactNode }) => {
   const [snippets, setSnippets] = useState<Snippet[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedTag, setSelectedTag] = useState("");
 
   return (
     <SnippetsContext.Provider
-      value={{ snippets, setSnippets, searchQuery, setSearchQuery }}
+      value={{
+        snippets,
+        setSnippets,
+        searchQuery,
+        setSearchQuery,
+        setSelectedTag,
+        selectedTag,
+      }}
     >
       {children}
     </SnippetsContext.Provider>

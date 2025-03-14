@@ -5,11 +5,11 @@ import { IoMdCreate } from "react-icons/io";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 
-interface CloseMenuLinksProps {
+interface CloseSideBarProps {
   onClick: () => void;
 }
 
-const CloseMenuLinks = ({ onClick }: CloseMenuLinksProps) => {
+const CloseSideBar = ({ onClick }: CloseSideBarProps) => {
   return (
     <div className="flex flex-col  gap-10 border bg-slate-100 border-slate-300 dark:bg-slate-800 dark:border-none shadow-lg w-14 h-screen p-7 rounded-lg">
       <div className="flex flex-col items-center gap-10">
@@ -26,7 +26,7 @@ const CloseMenuLinks = ({ onClick }: CloseMenuLinksProps) => {
               Create
             </span>
             <Link href="/create">
-              <IoMdCreate size={25} className="dark:text-slate-300" />
+              <IoMdCreate size={25} />
             </Link>
           </div>
           <div className=" relative group hover:bg-blue-500 p-2 hover:text-white  rounded-lg cursor-pointer">
@@ -34,7 +34,7 @@ const CloseMenuLinks = ({ onClick }: CloseMenuLinksProps) => {
               Snippets
             </span>
             <Link href="/dashboard">
-              <AiFillAppstore size={25} className="dark:text-slate-300" />
+              <AiFillAppstore size={25} />
             </Link>
           </div>
           <div className=" relative group hover:bg-blue-500 p-2 hover:text-red-500  rounded-lg cursor-pointer">
@@ -42,7 +42,7 @@ const CloseMenuLinks = ({ onClick }: CloseMenuLinksProps) => {
               Favorits
             </span>
             <Link href="/favorits">
-              <IoIosHeart size={25} className="dark:text-slate-300" />
+              <IoIosHeart size={25} />
             </Link>
           </div>
         </div>
@@ -53,4 +53,4 @@ const CloseMenuLinks = ({ onClick }: CloseMenuLinksProps) => {
     </div>
   );
 };
-export default CloseMenuLinks;
+export default CloseSideBar;
