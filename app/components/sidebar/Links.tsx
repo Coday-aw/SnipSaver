@@ -18,7 +18,7 @@ const Links = () => {
         onClick={() => setActiveLink("/dashboard")}
       >
         <AiFillAppstore
-          className={activeLink == "/dashboard" ? "text-black" : ""}
+          className={activeLink == "/dashboard" ? "text-white" : "text-black"}
         />
         All Snippets
       </Link>

@@ -11,8 +11,6 @@ function DashBoard() {
   const { snippets, loading, setSnippets } = useSnippets();
   const { searchQuery, selectedTag } = useSnippetsContext();
 
-  // Extract unique tags
-
   const filteredSnippets = snippets.filter(
     (snippet) =>
       (snippet.title

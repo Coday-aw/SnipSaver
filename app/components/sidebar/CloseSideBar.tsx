@@ -11,7 +11,7 @@ interface CloseSideBarProps {
 
 const CloseSideBar = ({ onClick }: CloseSideBarProps) => {
   return (
-    <div className="flex flex-col  gap-10 border bg-slate-100 border-slate-300 dark:bg-slate-800 dark:border-none shadow-lg w-14 h-screen p-7 rounded-lg">
+    <div className="flex flex-col  gap-10 border  border-slate-300 dark:bg-slate-800 dark:border-none shadow-lg w-14 h-screen p-7 rounded-lg">
       <div className="flex flex-col items-center gap-10">
         <button
           onClick={onClick}

@@ -19,7 +19,7 @@ const Tags = () => {
   );
 
   return (
-    <div className="flex gap-2 md:overflow-hidden overflow-x-scroll p-2 mb-5 border border-slate-300 rounded-lg shadow-lg">
+    <div className="flex gap-2 md:overflow-hidden overflow-x-scroll p-2 mb-5 border dark:border-none border-slate-300 dark:bg-slate-800 rounded-lg shadow-lg">
       {tags.length === 0 ? (
         <div>No tags found</div>
       ) : (
