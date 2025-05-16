@@ -16,6 +16,9 @@ function OpenSideBar({ onClick }: OpenSideBarProps) {
       <div className="flex justify-center items-center gap-2">
         <Logo />
         <button
+          aria-label="open-sidebar"
+          name="open-sidebar"
+          type="button"
           className=" hover:bg-blue-500 hover:text-white p-2 rounded-lg cursor-pointer"
           onClick={onClick}
         >
@@ -24,7 +27,9 @@ function OpenSideBar({ onClick }: OpenSideBarProps) {
       </div>
 
       <Button width="full">
-        <Link href="/create">Create snippet</Link>
+        <Link className="text-xl" href="/create">
+          Create snippet
+        </Link>
       </Button>
       <Links />
       <Languages />

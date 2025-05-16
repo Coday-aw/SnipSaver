@@ -1,6 +1,6 @@
 import { Snippet } from "@/lib/types";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { dark, docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { IoCopyOutline } from "react-icons/io5";
 import { FaTrashCan } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
@@ -86,15 +86,15 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
         />
       </div>
       <div className="flex justify-between">
-        <p className=" border p-1 rounded-lg text-white dark:text-slate-300 bg-blue-500">
+        <p className=" border px-2 py-1 font-bold rounded-lg text-white dark:text-slate-300 bg-blue-500">
           {snippet.language}
         </p>
       </div>
 
       <div className="overflow-y-auto">
         <SyntaxHighlighter
-          language={snippet.language.toLocaleLowerCase()}
           style={docco}
+          language={snippet.language.toLocaleLowerCase()}
         >
           {snippet.code}
         </SyntaxHighlighter>
@@ -106,7 +106,7 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
           className="hover:text-blue-500 cursor-pointer dark:text-slate-300"
         />
         <div className="flex gap-2">
-          <Link href={`/edit/${snippet.id}`}>
+          <Link aria-label="edit link" href={`/edit/${snippet.id}`}>
             <FaEdit
               size={20}
               className="hover:text-blue-500 cursor-pointer dark:text-slate-300"

@@ -26,8 +26,8 @@ const Tags = () => {
         <>
           <button
             onClick={() => setSelectedTag("")}
-            className={`px-4 py-2 rounded-lg  cursor-pointer
-                ${selectedTag === "" ? "bg-blue-500" : ""}
+            className={`px-4 py-2 rounded-lg  cursor-pointer font-medium
+                ${selectedTag === "" ? "bg-blue-500 text-white" : ""}
                 `}
           >
             All
@@ -39,7 +39,7 @@ const Tags = () => {
                 key={index}
                 onClick={() => setSelectedTag(tag)}
                 className={`px-4 py-2 rounded-lg cursor-pointer font-medium ${
-                  selectedTag === tag ? "bg-blue-500" : ""
+                  selectedTag === tag ? "bg-blue-500 text-white" : ""
                 }`}
               >
                 {tag}

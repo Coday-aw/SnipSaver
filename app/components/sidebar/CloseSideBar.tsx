@@ -14,6 +14,9 @@ const CloseSideBar = ({ onClick }: CloseSideBarProps) => {
     <div className="flex flex-col  gap-10 border  border-slate-300 dark:bg-slate-800 dark:border-none shadow-lg w-14 h-screen p-7 rounded-lg">
       <div className="flex flex-col items-center gap-10">
         <button
+          aria-label="close-sidebar"
+          name="close-sidebar"
+          type="button"
           onClick={onClick}
           className=" hover:bg-blue-500 p-2 hover:text-white  rounded-lg cursor-pointer"
         >
