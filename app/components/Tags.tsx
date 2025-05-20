@@ -34,7 +34,7 @@ const Tags = () => {
           </button>
 
           {tags.map((tag, index) => (
-            <div>
+            <div key={index}>
               <button
                 key={index}
                 onClick={() => setSelectedTag(tag)}
