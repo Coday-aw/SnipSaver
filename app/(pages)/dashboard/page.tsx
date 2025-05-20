@@ -30,32 +30,37 @@ function DashBoard() {
     setSnippets(snippets.filter((snippet) => Number(snippet.id) !== id));
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return (
+      <div className="flex justify-center items-center h-screen font-bold text-2xl">
+        Loading...
+      </div>
+    );
 
   return (
     <>
       <Tags />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-        <Toaster />
-        {filteredSnippets.length === 0 ? (
-          <div className="flex justify-center items-center mt-32">
-            <div className="flex flex-col gap-10">
-              <p className="text-2xl font-bold">Welcome to Snip Saver</p>
-              <Button width="150px">
-                <Link href="/create">Create snippet</Link>
-              </Button>
-            </div>
+      <Toaster />
+      {filteredSnippets.length === 0 ? (
+        <div className="flex justify-center items-center mt-32">
+          <div className="flex flex-col gap-5">
+            <p className="text-2xl font-bold">Welcome to Snip Saver</p>
+            <Button width="150px">
+              <Link href="/create">Create snippet</Link>
+            </Button>
           </div>
-        ) : (
-          filteredSnippets.map((snippet) => (
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+          {filteredSnippets.map((snippet) => (
             <SnippetCard
               key={snippet.id}
               onDelete={handleDeleteSnippet}
               snippet={snippet}
             />
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </>
   );
 }

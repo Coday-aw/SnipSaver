@@ -1,6 +1,6 @@
 import { Snippet } from "@/lib/types";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { a11yLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { IoCopyOutline } from "react-icons/io5";
 import { FaTrashCan } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
@@ -93,7 +93,9 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
 
       <div className="overflow-y-auto">
         <SyntaxHighlighter
-          style={docco}
+          style={a11yLight}
+          showLineNumbers
+          wrapLongLines
           language={snippet.language.toLocaleLowerCase()}
         >
           {snippet.code}

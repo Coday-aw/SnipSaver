@@ -22,7 +22,9 @@ function page() {
 
   if (filteredSnippets.length === 0)
     return (
-      <div className="text-xl font-bold">You have no favorite snippets</div>
+      <div className="text-xl font-bold flex justify-center items-center">
+        You have no favorite snippets
+      </div>
     );
   return (
     <div className="grid grid-cols-1 md:grid-cols-2  gap-2">

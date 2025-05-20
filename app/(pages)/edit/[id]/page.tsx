@@ -121,7 +121,7 @@ function EditPage() {
             className="bg-blue-500 text-white p-2 rounded-lg w-32 cursor-pointer"
             type="submit"
           >
-            Edit
+            Save
           </button>
           <button className=" border border-blue-500 p-2 rounded-lg w-32 cursor-pointer">
             <Link href="/dashboard">Cancel</Link>
