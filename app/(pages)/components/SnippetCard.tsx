@@ -6,7 +6,7 @@ import { FaTrashCan } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import toast from "react-hot-toast";
-import { supabase } from "@/Supabase/supabaseClient";
+import { supabase } from "@/lib/supabaseClient";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 

@@ -1,7 +1,7 @@
 "use client";
 import { AllLanguages } from "@/lib/data";
 import React, { useState } from "react";
-import { supabase } from "@/Supabase/supabaseClient";
+import { supabase } from "@/lib/supabaseClient";
 import toast from "react-hot-toast";
 import { Snippet } from "@/lib/types";
 import CodeEditor from "./CodeEditor";
