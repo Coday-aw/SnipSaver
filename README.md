@@ -27,7 +27,7 @@ Snip-Saver is a [Next.js](https://nextjs.org) project bootstrapped with [`create
 
 ![Dashboard](./screenshots/dashboard.png)
 ![Dashboard](./screenshots/dashboard2.png)
-_The main landing page where users can get started with Snip-Saver_
+_Main dashboard showing all created code snippets with search and filter functionality_
 
 ### Create Snippet
 
