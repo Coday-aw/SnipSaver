@@ -1,6 +1,6 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { AiFillAppstore } from "react-icons/ai";
-import { IoIosHeart } from "react-icons/io";
+import { IoMdBookmark } from "react-icons/io";
 import { IoMdCreate } from "react-icons/io";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
@@ -53,8 +53,8 @@ const CloseSideBar = ({ onClick }: CloseSideBarProps) => {
             </Link>
           </div>
           <div
-            className={`relative group hover:bg-blue-500 p-2 hover:text-red-500  rounded-lg cursor-pointer ${
-              activeLink === "/favorits" ? "bg-blue-500 text-red-500" : ""
+            className={`relative group hover:bg-blue-500 p-2 hover:text-white  rounded-lg cursor-pointer ${
+              activeLink === "/favorits" ? "bg-blue-500 text-white" : ""
             }`}
             onClick={() => setActiveLink("/favorits")}
           >
@@ -62,7 +62,7 @@ const CloseSideBar = ({ onClick }: CloseSideBarProps) => {
               Favorits
             </span>
             <Link href="/favorits">
-              <IoIosHeart size={25} />
+              <IoMdBookmark size={25} />
             </Link>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { AiFillAppstore } from "react-icons/ai";
-import { IoIosHeart } from "react-icons/io";
+import { IoMdBookmark } from "react-icons/io";
 import Link from "next/link";
 import { useActiveLink } from "@/app/components/context/ActiveLinkContext";
 
@@ -10,7 +10,7 @@ const Links = () => {
     <div className="flex justify-center items-center flex-col gap-2 mt-10">
       <Link
         href="/dashboard"
-        className={`flex justify-start items-center gap-2 text-xl border p-2 rounded-lg font-bold w-full ${
+        className={`flex group justify-start items-center gap-2 text-xl border p-2 rounded-lg font-bold w-full ${
           activeLink === "/dashboard"
             ? "bg-blue-500 text-white border-none"
             : "border-black dark:border-slate-300"
@@ -29,12 +29,12 @@ const Links = () => {
         } hover:bg-blue-500 hover:text-white dark:text-slate-300 hover:border-none`}
         onClick={() => setActiveLink("/favorits")}
       >
-        <IoIosHeart
-          className={`group-hover:text-red-500 ${
-            activeLink === "/favorits" ? "text-red-500" : ""
+        <IoMdBookmark
+          className={`group-hover:text-white ${
+            activeLink === "/favorits" ? "text-white" : ""
           }`}
         />
-        Favorits
+        Bookmarked
       </Link>
     </div>
   );

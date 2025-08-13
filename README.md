@@ -21,6 +21,29 @@ Snip-Saver is a [Next.js](https://nextjs.org) project bootstrapped with [`create
 
 ## Getting Started
 
+## Pictures
+
+### Dashboard
+
+![Dashboard](./screenshots/dashboard.png)
+![Dashboard](./screenshots/dashboard2.png)
+_The main landing page where users can get started with Snip-Saver_
+
+### Create Snippet
+
+![Create Snippet](./screenshots/create.png)
+_Form to create and save new code snippets with syntax highlighting_
+
+### Edit Snippet
+
+![Edit Snippet](./screenshots/edit.png)
+_Form to edit and update existing code snippets_
+
+### Bookmarked Snippets
+
+![Bookmarked Snippets](./screenshots/bookmarked.png)
+_View all your bookmarked code snippets in one place_
+
 First, clone the repository:
 
 ```bash

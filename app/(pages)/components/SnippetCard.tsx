@@ -4,7 +4,7 @@ import { a11yLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { IoCopyOutline } from "react-icons/io5";
 import { FaTrashCan } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa6";
+import { IoMdBookmark } from "react-icons/io";
 import toast from "react-hot-toast";
 import { supabase } from "@/lib/supabaseClient";
 import { useEffect, useState } from "react";
@@ -63,9 +63,9 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
       toast.error("An error occurred while liking the snippet");
     }
     if (isLiked) {
-      toast.success("Snippet unliked successfully");
+      toast.success("Snippet added to bookmarks!");
     } else {
-      toast.success("Snippet liked successfully");
+      toast.success("Snippet removed from bookmarks!");
     }
     console.log(data);
     setIsLiked(!isLiked);
@@ -77,11 +77,13 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
         <p className="font-bold text-xl md:text-2xl dark:text-slate-300">
           {snippet.title}
         </p>
-        <FaHeart
+        <IoMdBookmark
           onClick={handleLiked}
-          size={20}
-          className={`cursor-pointer  ${
-            isLiked ? "text-red-500" : "hover:text-red-500"
+          size={30}
+          className={`cursor-pointer border p-1 rounded-full  ${
+            isLiked
+              ? "text-white bg-blue-500 border-blue-500"
+              : " hover:bg-blue-500 hover:text-white dark:text-slate-300"
           } `}
         />
       </div>
