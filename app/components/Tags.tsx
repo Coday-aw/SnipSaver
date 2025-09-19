@@ -24,8 +24,12 @@ const Tags = () => {
         <div className="flex gap-2 md:overflow-hidden overflow-x-scroll p-2 mb-5 border dark:border-none border-slate-300 dark:bg-slate-800 rounded-lg shadow-lg">
           <button
             onClick={() => setSelectedTag("")}
-            className={`px-4 py-2 rounded-lg  cursor-pointer font-medium
-                ${selectedTag === "" ? "bg-blue-500 text-white" : ""}
+            className={`px-4 py-2 rounded-lg  cursor-pointer font-medium 
+                ${
+                  selectedTag === ""
+                    ? " bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-4 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]"
+                    : ""
+                }
                 `}
           >
             All
@@ -36,8 +40,10 @@ const Tags = () => {
               <button
                 key={index}
                 onClick={() => setSelectedTag(tag)}
-                className={`px-4 py-2 rounded-lg cursor-pointer font-medium ${
-                  selectedTag === tag ? "bg-blue-500 text-white" : ""
+                className={`px-4 py-3 rounded-lg cursor-pointer font-medium ${
+                  selectedTag === tag
+                    ? " bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-4 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]"
+                    : ""
                 }`}
               >
                 {tag}

@@ -1,23 +1,6 @@
 "use client";
-
-import { IoLogoJavascript } from "react-icons/io5";
-import {
-  SiPython,
-  SiGo,
-  SiRuby,
-  SiPhp,
-  SiSwift,
-  SiCplusplus,
-  SiSharp,
-  SiHtml5,
-  SiCss3,
-  SiMysql,
-} from "react-icons/si";
-import { FaJava } from "react-icons/fa";
-import { BiLogoTypescript } from "react-icons/bi";
-
 import { useSnippets } from "@/hooks/useSnippets";
-import { useEffect } from "react";
+import { getLanguageIcon } from "../GetLangyageIcon";
 
 const Languages = () => {
   const { snippets, loading } = useSnippets();
@@ -39,39 +22,6 @@ const Languages = () => {
     };
   });
 
-  const getIcon = (language: string) => {
-    switch (language.toLocaleLowerCase()) {
-      case "javascript":
-        return <IoLogoJavascript size={20} className="text-yellow-400" />;
-      case "python":
-        return <SiPython size={20} className="text-blue-500" />;
-      case "java":
-        return <FaJava size={20} className="text-red-600" />;
-      case "html":
-        return <SiHtml5 size={20} className="text-orange-600" />;
-      case "css":
-        return <SiCss3 size={20} className="text-blue-600" />;
-      case "typescript":
-        return <BiLogoTypescript size={20} className="text-blue-600" />;
-      case "go":
-        return <SiGo size={20} className="text-cyan-500" />;
-      case "ruby":
-        return <SiRuby size={20} className="text-red-500" />;
-      case "php":
-        return <SiPhp size={20} className="text-purple-600" />;
-      case "swift":
-        return <SiSwift size={20} className="text-orange-500" />;
-      case "c++":
-        return <SiCplusplus size={20} className="text-blue-700" />;
-      case "c#":
-        return <SiSharp size={20} className="text-purple-700" />;
-      case "sql":
-        return <SiMysql size={20} className="text-blue-600" />;
-      default:
-        return null;
-    }
-  };
-
   if (loading) return <div>Loading...</div>;
 
   return (
@@ -80,7 +30,7 @@ const Languages = () => {
       <ul className="mt-2 space-y-2 p-2">
         {sortedLanguages.map((language) => (
           <li key={language.name} className="flex items-center">
-            {getIcon(language.name)}
+            {getLanguageIcon(language.name, 20)}
             <span className="ml-2">{language.name}</span>
             <span className="ml-auto">{language.count}</span>
           </li>

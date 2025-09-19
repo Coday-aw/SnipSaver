@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Modal from "./Modal";
 import CodeModal from "./CodeModal";
+import { getLanguageIcon } from "./GetLangyageIcon";
 
 interface SnippetCardProps {
   snippet: Snippet;
@@ -91,11 +92,7 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
           } `}
         />
       </div>
-      <div className="flex justify-between">
-        <p className=" border px-2 py-1 font-bold rounded-lg text-white dark:text-slate-300 bg-blue-500">
-          {snippet.language}
-        </p>
-      </div>
+      <div>{getLanguageIcon(snippet.language, 40)}</div>
 
       <div className="overflow-y-auto relative flex-1 group">
         <div
