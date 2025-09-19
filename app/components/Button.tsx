@@ -8,7 +8,7 @@ interface ButtonProps {
 const Button = ({ children, width, type, onClick }: ButtonProps) => {
   return (
     <button
-      className=" border p-2 bg-blue-500 rounded-lg text-white font-bold cursor-pointer"
+      className=" w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-4 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]"
       style={{ width }}
       onClick={onClick}
       type={type}

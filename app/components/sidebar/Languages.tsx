@@ -42,31 +42,31 @@ const Languages = () => {
   const getIcon = (language: string) => {
     switch (language.toLocaleLowerCase()) {
       case "javascript":
-        return <IoLogoJavascript size={20} />;
+        return <IoLogoJavascript size={20} className="text-yellow-400" />;
       case "python":
-        return <SiPython size={20} />;
+        return <SiPython size={20} className="text-blue-500" />;
       case "java":
-        return <FaJava size={20} />;
+        return <FaJava size={20} className="text-red-600" />;
       case "html":
-        return <SiHtml5 size={20} />;
+        return <SiHtml5 size={20} className="text-orange-600" />;
       case "css":
-        return <SiCss3 size={20} />;
+        return <SiCss3 size={20} className="text-blue-600" />;
       case "typescript":
-        return <BiLogoTypescript size={20} />;
+        return <BiLogoTypescript size={20} className="text-blue-600" />;
       case "go":
-        return <SiGo size={20} />;
+        return <SiGo size={20} className="text-cyan-500" />;
       case "ruby":
-        return <SiRuby size={20} />;
+        return <SiRuby size={20} className="text-red-500" />;
       case "php":
-        return <SiPhp size={20} />;
+        return <SiPhp size={20} className="text-purple-600" />;
       case "swift":
-        return <SiSwift size={20} />;
+        return <SiSwift size={20} className="text-orange-500" />;
       case "c++":
-        return <SiCplusplus size={20} />;
+        return <SiCplusplus size={20} className="text-blue-700" />;
       case "c#":
-        return <SiSharp size={20} />;
+        return <SiSharp size={20} className="text-purple-700" />;
       case "sql":
-        return <SiMysql size={20} />;
+        return <SiMysql size={20} className="text-blue-600" />;
       default:
         return null;
     }
