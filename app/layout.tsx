@@ -28,7 +28,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased  dark:bg-slate-900 dark:text-slate-300 `}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased  dark:bg-slate-950 dark:text-slate-300 `}
         >
           {children}
           <Footer />

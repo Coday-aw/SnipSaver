@@ -19,8 +19,6 @@ Snip-Saver is a [Next.js](https://nextjs.org) project bootstrapped with [`create
 - Mark snippets as favorites
 - Filter snippets by language and title
 
-## Getting Started
-
 ## Pictures
 
 ### Dashboard
@@ -43,6 +41,8 @@ _Form to edit and update existing code snippets_
 
 ![Bookmarked Snippets](./screenshots/bookmarked.png)
 _View all your bookmarked code snippets in one place_
+
+## Getting Started
 
 First, clone the repository:
 

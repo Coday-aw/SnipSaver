@@ -17,6 +17,7 @@ import { FaJava } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
 
 import { useSnippets } from "@/hooks/useSnippets";
+import { useEffect } from "react";
 
 const Languages = () => {
   const { snippets, loading } = useSnippets();

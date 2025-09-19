@@ -17,7 +17,11 @@ const Links = () => {
         } hover:bg-blue-500 hover:text-white dark:text-slate-300  hover:border-none`}
         onClick={() => setActiveLink("/dashboard")}
       >
-        <AiFillAppstore className="text-white" />
+        <AiFillAppstore
+          className={`group-hover:text-white ${
+            activeLink === "/dashboard" ? "text-white" : ""
+          }`}
+        />
         All Snippets
       </Link>
       <Link

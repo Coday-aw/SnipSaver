@@ -4,13 +4,12 @@ import { supabase } from "@/lib/supabaseClient";
 import toast, { Toaster } from "react-hot-toast";
 import { Snippet } from "@/lib/types";
 import { AllLanguages } from "@/lib/data";
-import CodeEditor from "../../components/CodeEditor";
+import CodeEditor from "../../../components/CodeEditor";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 
 function EditPage() {
   const params = useParams();
-  const [snippet, setSnippet] = useState<Snippet | null>(null);
 
   const [title, setTitle] = useState("");
   const [language, setLanguage] = useState("");
@@ -29,7 +28,6 @@ function EditPage() {
         console.log(error);
         toast.error("An error occurred while fetching the snippet");
       } else {
-        setSnippet(data);
         setTitle(data.title);
         setLanguage(data.language);
         setTags(data.tags);

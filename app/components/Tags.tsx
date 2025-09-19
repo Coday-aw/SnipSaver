@@ -19,11 +19,9 @@ const Tags = () => {
   );
 
   return (
-    <div className="flex gap-2 md:overflow-hidden overflow-x-scroll p-2 mb-5 border dark:border-none border-slate-300 dark:bg-slate-800 rounded-lg shadow-lg">
-      {tags.length === 0 ? (
-        <div>No tags found</div>
-      ) : (
-        <>
+    <>
+      {tags.length > 0 && (
+        <div className="flex gap-2 md:overflow-hidden overflow-x-scroll p-2 mb-5 border dark:border-none border-slate-300 dark:bg-slate-800 rounded-lg shadow-lg">
           <button
             onClick={() => setSelectedTag("")}
             className={`px-4 py-2 rounded-lg  cursor-pointer font-medium
@@ -46,9 +44,9 @@ const Tags = () => {
               </button>
             </div>
           ))}
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

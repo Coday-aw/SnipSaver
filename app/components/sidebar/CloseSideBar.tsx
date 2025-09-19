@@ -58,8 +58,8 @@ const CloseSideBar = ({ onClick }: CloseSideBarProps) => {
             }`}
             onClick={() => setActiveLink("/favorits")}
           >
-            <span className=" absolute top-[-34px] text-center right-[-8px] text-white bg-black p-1 text-sm rounded-full opacity-0 group-hover:opacity-100 ">
-              Favorits
+            <span className=" absolute top-[-34px] text-center right-[-20px] text-white bg-black p-1 text-sm rounded-full opacity-0 group-hover:opacity-100 ">
+              Bookmarked
             </span>
             <Link href="/favorits">
               <IoMdBookmark size={25} />

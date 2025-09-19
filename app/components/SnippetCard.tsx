@@ -9,6 +9,8 @@ import toast from "react-hot-toast";
 import { supabase } from "@/lib/supabaseClient";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Modal from "./Modal";
+import CodeModal from "./CodeModal";
 
 interface SnippetCardProps {
   snippet: Snippet;
@@ -17,6 +19,8 @@ interface SnippetCardProps {
 
 const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
   const [isLiked, setIsLiked] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [showCodeModal, setShowCodeModal] = useState(false); // Add this line
 
   useEffect(() => {
     const checkLiked = async () => {
@@ -93,7 +97,14 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
         </p>
       </div>
 
-      <div className="overflow-y-auto">
+      <div className="overflow-y-auto relative flex-1 group">
+        <div
+          className="absolute cursor-pointer inset-0 bg-black/20 backdrop-blur-sm opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center z-10"
+          onClick={() => setShowCodeModal(true)} // Add click handler
+        >
+          <span className="text-white font-bold text-lg">View Snippet</span>
+        </div>
+
         <SyntaxHighlighter
           style={a11yLight}
           showLineNumbers
@@ -117,10 +128,26 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
             />
           </Link>
           <FaTrashCan
-            onClick={handleDelete}
+            onClick={() => setOpen(true)}
             size={20}
             className="hover:text-red-500 cursor-pointer dark:text-slate-300"
           />
+
+          <CodeModal
+            snippet={snippet}
+            isOpen={showCodeModal}
+            onClose={() => setShowCodeModal(false)}
+          />
+          {open && (
+            <Modal
+              open={open}
+              setOpen={setOpen}
+              onDelete={() => {
+                handleDelete();
+                setOpen(false);
+              }}
+            />
+          )}
         </div>
       </div>
     </div>

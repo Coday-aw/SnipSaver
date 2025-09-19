@@ -4,7 +4,7 @@ import Link from "next/link";
 import Languages from "./Languages";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { UserButton } from "@clerk/nextjs";
-import Button from "@/app/(pages)/components/Button";
+import Button from "../Button";
 
 interface OpenSideBarProps {
   onClick: () => void;
