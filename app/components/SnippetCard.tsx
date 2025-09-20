@@ -92,7 +92,9 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
           } `}
         />
       </div>
-      <div>{getLanguageIcon(snippet.language, 40)}</div>
+      <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
+        {getLanguageIcon(snippet.language, 30)} {snippet.language}{" "}
+      </div>
 
       <div className="overflow-y-auto relative flex-1 group">
         <div
