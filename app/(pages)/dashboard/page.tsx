@@ -60,18 +60,20 @@ function DashBoard() {
             </div>
           </div>
         ) : (
-          <EmptyState />
+        <EmptyState />
         )
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
-          {filteredSnippets.map((snippet) => (
-            <SnippetCard
-              key={snippet.id}
-              onDelete={handleDeleteSnippet}
-              snippet={snippet}
-            />
-          ))}
-        </div>
+   <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+            {filteredSnippets.map((snippet) => (
+              <SnippetCard
+                key={snippet.id}
+                onDelete={handleDeleteSnippet}
+                snippet={snippet}
+              />
+            ))}
+          </div>
+
+       
       )}
     </div>
   );

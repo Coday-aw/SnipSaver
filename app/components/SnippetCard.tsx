@@ -21,7 +21,7 @@ interface SnippetCardProps {
 const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
   const [isLiked, setIsLiked] = useState(false);
   const [open, setOpen] = useState(false);
-  const [showCodeModal, setShowCodeModal] = useState(false); // Add this line
+  const [showCodeModal, setShowCodeModal] = useState(false);
 
   useEffect(() => {
     const checkLiked = async () => {
@@ -65,12 +65,12 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
       .update({ liked: !isLiked })
       .eq("id", snippet.id);
     if (error) {
-      toast.error("An error occurred while liking the snippet");
+      toast.error("An error occurred while adding snippet to bookmarks");
     }
     if (isLiked) {
-      toast.success("Snippet added to bookmarks!");
-    } else {
       toast.success("Snippet removed from bookmarks!");
+    } else {
+      toast.success("Snippet added to bookmarks!");
     }
     console.log(data);
     setIsLiked(!isLiked);
@@ -99,7 +99,7 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
       <div className="overflow-y-auto relative flex-1 group">
         <div
           className="absolute cursor-pointer inset-0 bg-black/20 backdrop-blur-sm opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center z-10"
-          onClick={() => setShowCodeModal(true)} // Add click handler
+          onClick={() => setShowCodeModal(true)}
         >
           <span className="text-white font-bold text-lg">View Snippet</span>
         </div>
