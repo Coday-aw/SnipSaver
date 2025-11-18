@@ -2,7 +2,20 @@ import { CiMedicalClipboard } from "react-icons/ci";
 import Link from "next/link";
 import Button from "./Button";
 
-function EmptyState() {
+interface EmptyStateProps {
+  title?: string;
+  description?: string; 
+  icon?: React.ReactNode;
+  buttonText?:string;
+};
+
+function EmptyState({
+  title = "Welcome to Snip Saver",
+  description = "Start organizing your code snippets and boost your productivity",
+  buttonText = "Create Snippet",
+  icon
+} : EmptyStateProps) {
+  const Icon = icon ??  <CiMedicalClipboard size={36} className="text-white" />;
   return (
     <div className="flex flex-col justify-center items-center mt-40 gap-4 text-gray-500 dark:text-gray-400">
       <div
@@ -17,12 +30,12 @@ function EmptyState() {
               background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
             }}
           />
-          <CiMedicalClipboard size={36} className="text-white" />
+          {Icon}
         </div>
-        <p className="text-3xl font-bold">Welcome to Snip Saver</p>
-        <p>Start organizing your code snippets and boost your productivity</p>
-        <Button width="150px">
-          <Link href="/create">Create snippet</Link>
+        <p className="text-3xl font-bold">{title}</p>
+        <p>{description}</p>
+        <Button width="150px" height="50px" >
+          <Link href="/create">{buttonText}</Link>
         </Button>
       </div>
     </div>

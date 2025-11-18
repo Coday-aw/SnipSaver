@@ -1,11 +1,10 @@
-import Link from "next/link";
-import { LuComponent } from "react-icons/lu";
+import { FaCode } from "react-icons/fa";
 
 const Logo = () => {
   return (
     <div className="flex gap-2 items-center">
       <div className=" p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-        <LuComponent size={30} color="white" />
+       <FaCode color='white' size={30}/>
       </div>
       <div className="flex gap-1 text-2xl">
         <span className="text-blue-500 font-bold">Snip</span>

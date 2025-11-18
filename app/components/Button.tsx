@@ -1,20 +1,25 @@
+import React from 'react'
+
 interface ButtonProps {
-  children: React.ReactNode;
-  width?: string;
-  type?: "button" | "submit" | "reset";
-  onClick?: () => void;
+    children: React.ReactNode;
+    width: string | number;
+    height: string | number;
+    type?: "submit" | "button" | "reset";
+    onClick?: () => void;
 }
 
-const Button = ({ children, width, type, onClick }: ButtonProps) => {
+const Button = ({children, onClick, width, height, type}: ButtonProps) => {
   return (
-    <button
-      className=" w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-4 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]"
-      style={{ width }}
-      onClick={onClick}
-      type={type}
+    <button className='flex items-center justify-center rounded-full bg-linear-to-r from-blue-500 to-purple-600 p-0.5 cursor-pointer text-black'
+    type={type}
+    style={{width, height}}
+    onClick={onClick}
     >
-      {children}
-    </button>
-  );
-};
-export default Button;
+      <div className='flex h-full w-full items-center justify-center rounded-full bg-white font-bold hover:bg-linear-to-r from-blue-600 to-purple-600 hover:text-white'>
+        {children}
+      </div>
+    </button> 
+  )
+}
+
+export default Button

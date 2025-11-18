@@ -7,6 +7,7 @@ import { AllLanguages } from "@/lib/data";
 import CodeEditor from "../../../components/CodeEditor";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import Button from "@/app/components/Button";
 
 function EditPage() {
   const params = useParams();
@@ -115,15 +116,19 @@ function EditPage() {
           <CodeEditor value={code} onChange={(newValue) => setCode(newValue)} />
         </div>
         <div className="flex justify-end gap-4">
-          <button
-            className="bg-blue-500 text-white p-2 rounded-lg w-32 cursor-pointer"
+          <Button
+            height="50px"
+            width="150px"
             type="submit"
           >
             Save
-          </button>
-          <button className=" border border-blue-500 p-2 rounded-lg w-32 cursor-pointer">
+          </Button>
+          <Button
+            height="50px"
+            width="150px"
+          >
             <Link href="/dashboard">Cancel</Link>
-          </button>
+          </Button>
         </div>
       </form>
     </div>

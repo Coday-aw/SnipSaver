@@ -38,7 +38,7 @@ function DashBoard() {
   return (
     <div>
       <Toaster />
-      <Tags />
+      {/* <Tags /> */}
       {filteredSnippets.length === 0 ? (
         isSearchingOrFiltering ? (
           <div className="flex flex-col justify-center items-center mt-40 gap-4 text-gray-500 dark:text-gray-400">
@@ -63,7 +63,7 @@ function DashBoard() {
         <EmptyState />
         )
       ) : (
-   <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
             {filteredSnippets.map((snippet) => (
               <SnippetCard
                 key={snippet.id}
@@ -72,8 +72,6 @@ function DashBoard() {
               />
             ))}
           </div>
-
-       
       )}
     </div>
   );

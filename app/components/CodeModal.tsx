@@ -23,7 +23,6 @@ const CodeModal = ({ snippet, isOpen, onClose }: CodeModalProps) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
       <div className="bg-white dark:bg-slate-800 rounded-lg p-6 max-w-4xl max-h-[80vh] w-full mx-4 overflow-hidden">
-        {/* Header */}
         <div className="flex justify-between items-center mb-4">
           <div>
             <h2 className="text-xl font-bold dark:text-white">
@@ -48,8 +47,6 @@ const CodeModal = ({ snippet, isOpen, onClose }: CodeModalProps) => {
             </button>
           </div>
         </div>
-
-        {/* Code Content */}
         <div className="overflow-auto max-h-[60vh]">
           <SyntaxHighlighter
             style={a11yLight}

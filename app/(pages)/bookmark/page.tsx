@@ -1,5 +1,6 @@
 "use client";
 import toast, { Toaster } from "react-hot-toast";
+import { FiStar } from "react-icons/fi";
 import SnippetCard from "../../components/SnippetCard";
 import { useLikedSnippets } from "@/hooks/useSnippets";
 import { useSnippets as useSnippetContext } from "@/app/components/context/SnippetContext";
@@ -22,7 +23,7 @@ function page() {
 
   if (loading) return <Loader />;
 
-  if (filteredSnippets.length === 0) return <EmptyState />;
+  if (filteredSnippets.length === 0) return <EmptyState title="No bookmarked found" description="You haven't add any snippets to bookmarked yet!" icon={<FiStar size={36} className="text-white" />}/>;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2  gap-2">

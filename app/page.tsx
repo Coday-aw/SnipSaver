@@ -1,7 +1,7 @@
 "use client";
 import { redirect, useRouter } from "next/navigation";
 import IntroSection from "./components/IntroSection";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navagation/Navbar";
 import { useUser } from "@clerk/nextjs";
 import { useEffect } from "react";
 

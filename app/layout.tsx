@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import Footer from "./components/Footer";
+import TabBar from "./components/Navagation/TabBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +31,7 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased  dark:bg-slate-950 dark:text-slate-300 `}
         >
           {children}
-          <Footer />
+            <TabBar />
         </body>
       </html>
     </ClerkProvider>

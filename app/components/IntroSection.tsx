@@ -10,14 +10,12 @@ const IntroSection = () => {
     <div className="text-start flex flex-col items-center gap-5 mt-32 mx-16 ">
       <p className="text-3xl font-semibold">
         {" "}
-        <span className="text-blue-500">Snip</span> Saver Helps You Save Your
-        code <span className="text-blue-500">Snippets</span>
+        <span className="text-blue-500">Snip</span> Saver - Your Personal Code Library
       </p>
       <p className="w-[400px] sm:w-[600px] font-semibold">
-        Effortlessly organize your code snippets and components in one place,
-        making it quick and easy to find exactly what you need. Spend less time
-        searching through and wrating the same code over and over again and more
-        time being productive—save and streamline your work efficiently!{" "}
+       Effortlessly save, organize, and access your code snippets and components in one place.
+        Stop wasting time rewriting the same code over and over — find exactly what you need in seconds and stay focused on building.
+         Streamline your workflow, boost productivity, and keep your best code at your fingertips.
       </p>
 
       {user ? (

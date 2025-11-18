@@ -141,7 +141,7 @@ const SnippetForm = () => {
         />
       </div>
 
-      <Button type="submit" width="150px">
+      <Button type="submit" width="150px" height="50px">
         Create
       </Button>
     </form>
