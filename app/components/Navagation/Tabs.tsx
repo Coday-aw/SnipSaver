@@ -55,16 +55,16 @@ const Tabs = () => {
 
           <div
             className={`relative group hover:bg-linear-to-r from-blue-500 to-purple-600 p-2 hover:text-white  rounded-lg cursor-pointer ${
-              activeLink === "/favorits"
+              activeLink === "/bookmark"
                 ? "bg-linear-to-r from-blue-500 to-purple-600 text-white"
                 : ""
             }`}
-            onClick={() => setActiveLink("/favorits")}
+            onClick={() => setActiveLink("/bookmark")}
           >
             <span className=" absolute top-[-34px] text-center right-[-20px] text-white bg-black p-1 text-sm rounded-full opacity-0 group-hover:opacity-100 ">
               Bookmarked
             </span>
-            <Link href="/favorits">
+            <Link href="/bookmark">
               <IoMdBookmark size={25} />
             </Link>
           </div>
