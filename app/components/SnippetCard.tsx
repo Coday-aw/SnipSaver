@@ -96,7 +96,7 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
         {getLanguageIcon(snippet.language, 30)} {snippet.language}{" "}
       </div>
 
-      <div className="overflow-y-auto relative flex-1 group">
+      <div className="overflow-y-hidden relative flex-1 group">
         <div
           className="absolute cursor-pointer inset-0 bg-black/20 backdrop-blur-sm opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center z-10"
           onClick={() => setShowCodeModal(true)}
