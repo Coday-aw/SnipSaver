@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Modal from "./Modal";
 import CodeModal from "./CodeModal";
-import { getLanguageIcon } from "./GetLangyageIcon";
+import { getLanguageData } from "@/lib/data";
 
 interface SnippetCardProps {
   snippet: Snippet;
@@ -76,6 +76,8 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
     setIsLiked(!isLiked);
   };
 
+  const LangIcon = getLanguageData(snippet.language);
+
   return (
     <div className="flex flex-col h-[500px] border border-slate-300 dark:border-none  dark:bg-slate-800  gap-4 shadow-lg rounded-lg p-4 ">
       <div className="flex justify-between items-center">
@@ -93,7 +95,11 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
         />
       </div>
       <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
-        {getLanguageIcon(snippet.language, 30)} {snippet.language}{" "}
+        {LangIcon?.icon({
+          size: 24,
+          color: LangIcon.color,
+        })}
+        {LangIcon?.name}
       </div>
 
       <div className="overflow-y-hidden relative flex-1 group">

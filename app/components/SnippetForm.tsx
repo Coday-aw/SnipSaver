@@ -1,5 +1,5 @@
 "use client";
-import { AllLanguages } from "@/lib/data";
+import { AllLanguages, getLanguageData } from "@/lib/data";
 import React, { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import toast from "react-hot-toast";
@@ -8,6 +8,7 @@ import CodeEditor from "./CodeEditor";
 import Button from "./Button";
 import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+
 
 type SnippetFormData = Omit<Snippet, "id">;
 
@@ -74,6 +75,8 @@ const SnippetForm = () => {
     setFormData({ ...formData, language: e.target.value });
   };
 
+  const selectedLangObj = getLanguageData(selectedLanguage)
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -89,6 +92,7 @@ const SnippetForm = () => {
           type="text"
           name="title"
           id="title"
+          placeholder=".NET Project"
           className="mt-1 p-2 block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border border-slate-300 rounded-md"
         />
       </div>
@@ -98,9 +102,11 @@ const SnippetForm = () => {
           <label className="font-bold">Language</label>
           <div className="relative">
             <div className="absolute inset-y-0 left-2 flex items-center pr-3 pointer-events-none">
-              {AllLanguages.find(
-                (lang) => lang.name === selectedLanguage
-              )?.icon({ size: 20 })}
+              { selectedLangObj?.icon({
+                size: 20,
+                color: selectedLangObj.color
+              })
+              }
             </div>
             <select
               id="language"
@@ -126,6 +132,7 @@ const SnippetForm = () => {
             type="text"
             name="tags"
             id="tags"
+            placeholder="C#, Model, Class"
             className="mt-1 p-2 block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border border-slate-300 rounded-md"
           />
         </div>

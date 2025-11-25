@@ -25,69 +25,70 @@ export const AllLanguages: AllLanguages[] = [
   {
     name: "JavaScript",
     icon: IoLogoJavascript,
-    color: "text-yellow-400",
+    color: "#facc15", // yellow-400
   },
   {
     name: "TypeScript",
     icon: BiLogoTypescript,
-    color: "text-blue-600",
+    color: "#2563eb", // blue-600
   },
   {
     name: "Python",
     icon: SiPython,
-    color: "text-blue-500",
+    color: "#3b82f6", // blue-500
   },
   {
     name: "Java",
     icon: FaJava,
-    color: "text-red-600",
+    color: "#dc2626", // red-600
   },
   {
     name: "Go",
     icon: SiGo,
-    color: "text-cyan-500",
+    color: "#06b6d4", // cyan-500
   },
   {
     name: "Ruby",
     icon: SiRuby,
-    color: "text-red-500",
+    color: "#ef4444", // red-500
   },
   {
     name: "PHP",
     icon: SiPhp,
-    color: "text-purple-600",
+    color: "#7e22ce", // purple-600
   },
   {
     name: "Swift",
     icon: SiSwift,
-    color: "text-orange-500",
+    color: "#f97316", // orange-500
   },
   {
     name: "C++",
     icon: SiCplusplus,
-    color: "text-blue-700",
+    color: "#1d4ed8", // blue-700
   },
   {
     name: "C#",
     icon: SiSharp,
-    color: "text-purple-700",
+    color: "#6b21a8", // purple-700
   },
   {
     name: "HTML",
     icon: SiHtml5,
-    color: "text-orange-600",
+    color: "#ea580c", // orange-600
   },
   {
     name: "CSS",
     icon: SiCss3,
-    color: "text-blue-600",
+    color: "#2563eb", // blue-600
   },
   {
     name: "SQL",
     icon: SiMysql,
-    color: "text-blue-600",
+    color: "#2563eb", // blue-600
   },
 ];
+
 
 export const getLanguageData = (languageName: string) => {
   return AllLanguages.find(

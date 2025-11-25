@@ -5,6 +5,7 @@ import { IoClose } from "react-icons/io5";
 import { IoCopyOutline } from "react-icons/io5";
 import toast from "react-hot-toast";
 import { Snippet } from "@/lib/types";
+import { getLanguageData } from "@/lib/data";
 
 interface CodeModalProps {
   snippet: Snippet;
@@ -20,6 +21,8 @@ const CodeModal = ({ snippet, isOpen, onClose }: CodeModalProps) => {
 
   if (!isOpen) return null;
 
+  const LangIcon = getLanguageData(snippet.language);
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
       <div className="bg-white dark:bg-slate-800 rounded-lg p-6 max-w-4xl max-h-[80vh] w-full mx-4 overflow-hidden">
@@ -28,9 +31,13 @@ const CodeModal = ({ snippet, isOpen, onClose }: CodeModalProps) => {
             <h2 className="text-xl font-bold dark:text-white">
               {snippet.title}
             </h2>
-            <span className="inline-block px-2 py-1 text-xs font-semibold text-white bg-blue-500 rounded">
-              {snippet.language}
-            </span>
+            <div className=" mt-2 flex items-center gap-2 text-gray-500 dark:text-gray-400">
+              {LangIcon?.icon({
+                size: 24,
+                color: LangIcon.color,
+              })}
+              {LangIcon?.name}
+            </div>
           </div>
           <div className="flex gap-2">
             <button
