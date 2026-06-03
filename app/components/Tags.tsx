@@ -20,38 +20,36 @@ const Tags = () => {
   return (
     <>
       {tags.length > 0 ? (
-        <div className="flex flex-col gap-2 overflow-hidden overflow-y-scroll p-2 mb-5 ">
+        <div className="flex flex-row gap-3 overflow-x-auto no-scrollbar py-2 mb-6">
           <button
             onClick={() => setSelectedTag("")}
-            className={`px-4 py-2 rounded-lg  cursor-pointer font-medium text-start flex justify-between 
-                ${
-                  selectedTag === ""
-                    ? " bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-4 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]"
-                    : ""
-                }
-                `}
+            className={`shrink-0 px-5 py-2 rounded-full cursor-pointer font-medium flex items-center gap-2 border transition-all duration-200 ${
+              selectedTag === ""
+                ? "bg-gradient-to-r from-violet-500 to-cyan-500 text-white border-transparent shadow-md shadow-violet-500/20"
+                : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-violet-500/50 hover:text-violet-500"
+            }`}
           >
-            <p>All</p>
-            <p>{tags.length}</p>
+            <span>All</span>
+            <span className={`text-xs px-2 py-0.5 rounded-full ${selectedTag === "" ? "bg-white/20" : "bg-slate-100 dark:bg-slate-700"}`}>{tags.length}</span>
           </button>
 
           {tags.map((tag) => (
             <button
               key={tag}
               onClick={() => setSelectedTag(tag)}
-              className={`px-4 py-3 rounded-lg cursor-pointer font-medium text-start flex justify-between ${
+              className={`shrink-0 px-5 py-2 rounded-full cursor-pointer font-medium flex items-center gap-2 border transition-all duration-200 ${
                 selectedTag === tag
-                  ? " bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-4 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]"
-                  : ""
+                  ? "bg-gradient-to-r from-violet-500 to-cyan-500 text-white border-transparent shadow-md shadow-violet-500/20"
+                  : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-violet-500/50 hover:text-violet-500"
               }`}
             >
-              <p>{tag}</p>
-              <p>{tagCount[tag] ?? 0}</p>
+              <span>{tag}</span>
+              <span className={`text-xs px-2 py-0.5 rounded-full ${selectedTag === tag ? "bg-white/20" : "bg-slate-100 dark:bg-slate-700"}`}>{tagCount[tag] ?? 0}</span>
             </button>
           ))}
         </div>
       ) : (
-        <p className="px-3">No tags found</p>
+        <p className="px-3 mb-6 text-slate-500">No tags found</p>
       )}
     </>
   );

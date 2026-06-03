@@ -1,6 +1,7 @@
 "use client";
 import toast, { Toaster } from "react-hot-toast";
 import { FiStar } from "react-icons/fi";
+import Searchbar from "@/app/components/Searchbar";
 import SnippetCard from "../../components/SnippetCard";
 import { useLikedSnippets } from "@/hooks/useSnippets";
 import { useSnippets as useSnippetContext } from "@/app/components/context/SnippetContext";
@@ -23,16 +24,21 @@ function page() {
 
   if (loading) return <Loader />;
 
-  if (filteredSnippets.length === 0) return <EmptyState title="No bookmarked found" description="You haven't add any snippets to bookmarked yet!" icon={<FiStar size={36} className="text-white" />}/>;
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2  gap-2">
+    <div className="space-y-6">
       <Toaster />
-      {filteredSnippets.map((snippet) => (
-        <div key={snippet.id}>
-          <SnippetCard snippet={snippet} onDelete={handleDeleteSnippet} />
+      <Searchbar />
+      {filteredSnippets.length === 0 ? (
+         <EmptyState title="No bookmarks found" description={searchQuery ? "No matching bookmarked snippets found." : "You haven't added any snippets to bookmarks yet!"} icon={<FiStar size={36} className="text-white" />}/>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {filteredSnippets.map((snippet) => (
+            <div key={snippet.id}>
+              <SnippetCard snippet={snippet} onDelete={handleDeleteSnippet} />
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
   );
 }

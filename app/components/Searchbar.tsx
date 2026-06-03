@@ -5,20 +5,18 @@ import { useSnippets } from "./context/SnippetContext";
 const Searchbar = () => {
   const { searchQuery, setSearchQuery } = useSnippets();
   return (   
-   <div className="relative flex items-center">
+   <div className="relative flex items-center w-full">
       <span className="absolute left-4">
-        <CiSearch size={25} className=" dark:text-white" />
+        <CiSearch size={24} className="text-slate-400" />
       </span>
       <input
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="py-2 pl-10 pr-4 border border-slate-400 rounded-lg lg:w-[500px] md:w-[300px]  sm:w-[100px] w-full dark:text-white "
+        className="py-3 pl-12 pr-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 outline-none transition-all w-full shadow-sm text-slate-800 dark:text-white"
         type="text"
-        placeholder="Search..."
+        placeholder="Search snippets..."
       />
     </div>
-  
-  
   );
 };
 export default Searchbar;

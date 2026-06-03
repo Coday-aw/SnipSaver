@@ -79,7 +79,7 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
   const LangIcon = getLanguageData(snippet.language);
 
   return (
-    <div className="flex flex-col h-[500px] border border-slate-300 dark:border-none  dark:bg-slate-800  gap-4 shadow-lg rounded-lg p-4 ">
+    <div className="flex flex-col h-[500px] glass-card gap-4 shadow-lg rounded-2xl p-4 transition-all duration-300 hover:shadow-xl hover:shadow-violet-500/10 hover:-translate-y-1">
       <div className="flex justify-between items-center">
         <p className="font-bold text-xl md:text-2xl dark:text-slate-300">
           {snippet.title}
@@ -87,10 +87,10 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
         <IoMdBookmark
           onClick={handleLiked}
           size={30}
-          className={`cursor-pointer border p-1 rounded-full  ${
+          className={`cursor-pointer border p-1 rounded-full transition-colors ${
             isLiked
-              ? "text-white bg-blue-500 border-blue-500"
-              : " hover:bg-blue-500 hover:text-white dark:text-slate-300"
+              ? "text-white bg-violet-500 border-violet-500"
+              : " hover:bg-violet-500 hover:border-violet-500 hover:text-white dark:text-slate-300"
           } `}
         />
       </div>
@@ -123,13 +123,13 @@ const SnippetCard = ({ snippet, onDelete }: SnippetCardProps) => {
         <IoCopyOutline
           onClick={handleCopy}
           size={20}
-          className="hover:text-blue-500 cursor-pointer dark:text-slate-300"
+          className="hover:text-violet-500 transition-colors cursor-pointer dark:text-slate-300"
         />
         <div className="flex gap-2">
           <Link aria-label="edit link" href={`/edit/${snippet.id}`}>
             <FaEdit
               size={20}
-              className="hover:text-blue-500 cursor-pointer dark:text-slate-300"
+              className="hover:text-violet-500 transition-colors cursor-pointer dark:text-slate-300"
             />
           </Link>
           <FaTrashCan

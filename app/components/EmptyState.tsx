@@ -23,11 +23,11 @@ function EmptyState({
          hover:shadow-[0_20px_60px_rgba(99, 102, 241, 0.15)] transition-all duration-300
       "
       >
-        <div className="relative flex items-center justify-center mx-auto mb-10 w-[80px] h-[80px] rounded-[20px] bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] shadow-[0_8px_32px_rgba(99,102,241,0.3)] animate-[iconFloat_3s_ease-in-out_infinite]">
+        <div className="relative flex items-center justify-center mx-auto mb-10 w-[80px] h-[80px] rounded-[20px] bg-gradient-to-br from-[#8b5cf6] to-[#06b6d4] shadow-[0_8px_32px_rgba(139,92,246,0.3)] animate-[iconFloat_3s_ease-in-out_infinite]">
           <span
             className="absolute top-[-4px] left-[-4px] right-[-4px] bottom-[-4px] rounded-[24px] opacity-30 blur-[8px] -z-10"
             style={{
-              background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+              background: "linear-gradient(135deg, #8b5cf6, #06b6d4)",
             }}
           />
           {Icon}
