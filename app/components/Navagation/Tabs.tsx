@@ -18,13 +18,13 @@ const Tabs = () => {
     }
   }, [pathname, activeLink, setActiveLink]);
   return (
-      <div className={` flex flex-col gap-10 border  border-slate-300 bg-white dark:bg-slate-800 dark:border-none shadow-lg w-full h-14 p-2 lg:hidden fixed inset-x-o bottom-0 z-50 
+      <div className={` flex flex-col gap-10 glass-card w-full h-14 p-2 lg:hidden fixed inset-x-0 bottom-0 z-50 
       ${!user ? "hidden" : ""}`}>
         <div className=" flex justify-center items-center gap-15">
           <div
-            className={`relative group hover:bg-linear-to-r from-blue-500 to-purple-600 p-2 hover:text-white  rounded-lg cursor-pointer ${
+            className={`relative group hover:bg-gradient-to-r from-violet-500 to-cyan-500 p-2 hover:text-white rounded-lg cursor-pointer ${
               activeLink === "/dashboard"
-                ? "bg-linear-to-r from-blue-500 to-purple-600 text-white"
+                ? "bg-gradient-to-r from-violet-500 to-cyan-500 text-white"
                 : ""
             } `}
             onClick={() => setActiveLink("/dashboard")}
@@ -38,9 +38,9 @@ const Tabs = () => {
           </div>
 
           <div
-            className={` relative group hover:bg-linear-to-r from-blue-500 to-purple-600 p-2 hover:text-white  rounded-lg cursor-pointer ${
+            className={` relative group hover:bg-gradient-to-r from-violet-500 to-cyan-500 p-2 hover:text-white rounded-lg cursor-pointer ${
               activeLink === "/create"
-                ? "bg-linear-to-r from-blue-500 to-purple-600 text-white"
+                ? "bg-gradient-to-r from-violet-500 to-cyan-500 text-white"
                 : ""
             }`}
             onClick={() => setActiveLink("/create")}
@@ -54,9 +54,9 @@ const Tabs = () => {
           </div>
 
           <div
-            className={`relative group hover:bg-linear-to-r from-blue-500 to-purple-600 p-2 hover:text-white  rounded-lg cursor-pointer ${
+            className={`relative group hover:bg-gradient-to-r from-violet-500 to-cyan-500 p-2 hover:text-white rounded-lg cursor-pointer ${
               activeLink === "/bookmark"
-                ? "bg-linear-to-r from-blue-500 to-purple-600 text-white"
+                ? "bg-gradient-to-r from-violet-500 to-cyan-500 text-white"
                 : ""
             }`}
             onClick={() => setActiveLink("/bookmark")}

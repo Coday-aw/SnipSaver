@@ -26,7 +26,7 @@ const ModeToggle = () => {
   return (
     <div
       onClick={() => setDarkMode(!darkMode)}
-      className=" relative w-16 h-8 flex items-center dark:bg-slate-900 bg-blue-500 cursor-pointer rounded-full p-2 "
+      className=" relative w-16 h-8 flex items-center bg-violet-500 cursor-pointer rounded-full p-2 dark:bg-slate-800 dark:border-slate-600 border border-slate-300"
     >
       <FaMoon size={18} className="text-white" />
       <div

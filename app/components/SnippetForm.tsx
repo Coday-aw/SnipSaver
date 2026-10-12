@@ -80,7 +80,7 @@ const SnippetForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-6 border border-slate-200 dark:border-none shadow-lg dark:bg-slate-800 dark:text-slate-300 p-4 rounded-lg"
+      className="flex flex-col gap-6 glass-card shadow-lg p-6 rounded-2xl"
     >
       <div>
         <label className="font-bold">Title</label>
@@ -93,7 +93,7 @@ const SnippetForm = () => {
           name="title"
           id="title"
           placeholder=".NET Project"
-          className="mt-1 p-2 block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border border-slate-300 rounded-md"
+          className="mt-1 p-2 block w-full shadow-sm sm:text-sm focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-xl outline-none transition-all"
         />
       </div>
 
@@ -113,7 +113,7 @@ const SnippetForm = () => {
               name="language"
               value={selectedLanguage}
               onChange={handleLanguageChange}
-              className="mt-1 p-2 px-7 block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border border-slate-300 rounded-md"
+              className="mt-1 p-2 px-7 block w-full shadow-sm sm:text-sm focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-xl outline-none transition-all"
             >
               {AllLanguages.map((language) => (
                 <option key={language.name} value={language.name}>

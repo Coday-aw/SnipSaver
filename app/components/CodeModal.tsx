@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { a11yLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { IoClose } from "react-icons/io5";
@@ -14,19 +15,25 @@ interface CodeModalProps {
 }
 
 const CodeModal = ({ snippet, isOpen, onClose }: CodeModalProps) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleCopy = () => {
     navigator.clipboard.writeText(snippet.code);
     toast.success("Code copied successfully");
   };
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
   const LangIcon = getLanguageData(snippet.language);
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="bg-white dark:bg-slate-800 rounded-lg p-6 max-w-4xl max-h-[80vh] w-full mx-4 overflow-hidden">
-        <div className="flex justify-between items-center mb-4">
+  return createPortal(
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-md">
+      <div className="bg-white dark:bg-[#0a0f1e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 w-[95vw] h-[90vh] max-w-7xl flex flex-col shadow-2xl">
+        <div className="flex justify-between items-center mb-4 shrink-0">
           <div>
             <h2 className="text-xl font-bold dark:text-white">
               {snippet.title}
@@ -54,7 +61,7 @@ const CodeModal = ({ snippet, isOpen, onClose }: CodeModalProps) => {
             </button>
           </div>
         </div>
-        <div className="overflow-auto max-h-[60vh]">
+        <div className="flex-1 overflow-auto rounded-xl border border-slate-100 dark:border-slate-800/50">
           <SyntaxHighlighter
             style={a11yLight}
             showLineNumbers
@@ -65,7 +72,8 @@ const CodeModal = ({ snippet, isOpen, onClose }: CodeModalProps) => {
           </SyntaxHighlighter>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

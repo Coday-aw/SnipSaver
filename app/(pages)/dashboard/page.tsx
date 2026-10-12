@@ -1,5 +1,6 @@
 "use client";
 import Tags from "@/app/components/Tags";
+import Searchbar from "@/app/components/Searchbar";
 import SnippetCard from "../../components/SnippetCard";
 import toast, { Toaster } from "react-hot-toast";
 import { useSnippets } from "@/hooks/useSnippets";
@@ -36,9 +37,10 @@ function DashBoard() {
   if (loading) return <Loader />;
 
   return (
-    <div>
+    <div className="space-y-6">
       <Toaster />
-      {/* <Tags /> */}
+      <Searchbar />
+      <Tags />
       {filteredSnippets.length === 0 ? (
         isSearchingOrFiltering ? (
           <div className="flex flex-col justify-center items-center mt-40 gap-4 text-gray-500 dark:text-gray-400">
@@ -63,7 +65,7 @@ function DashBoard() {
         <EmptyState />
         )
       ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {filteredSnippets.map((snippet) => (
               <SnippetCard
                 key={snippet.id}
